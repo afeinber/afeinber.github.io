@@ -1,1 +1,85 @@
-"Hello World" 
+<!DOCTYPE html>
+
+<head>
+<title>Alex Feinberg</title>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<script src="jquery-1.11.1.min"></script>
+<style>
+li {
+	display: inline;
+	padding: 10px 20px 10px 20px;
+	position: relative;
+	top: -10px;
+	font-size: 20px;
+}
+header {
+	text-align: center;
+	background:black;
+	color: white;
+	padding: 10px 0 0 0;
+	margin: -10px -10px 0 -10px;
+}
+h1 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+h2 {
+	font-family: 'Montserrat', sans-serif;
+}
+img {
+	height: 175px;
+	width:auto;
+	border-radius: 70px;
+	border: 5px solid #666;
+	border-radius: 20px;
+	display: block;
+	margin: 0 auto;
+}
+body {
+	background: #e6eaf0;
+}
+p {
+	text-align: center;
+}
+</style>
+
+</head>
+
+
+
+<body>
+<header>
+<ul>
+<li>About Me</li>
+<li>Experience</li>
+<li>Contact</li>
+</ul>
+
+</header>
+<h1>Alex Feinberg's Page</h1>
+<!--img src="cover-cropped.png"-->
+<div class="photo-slide"></div>
+<h2>About Me</h2>
+<p>Blah write something here that will be mildly long and look sorta interesting.</p>
+<h2> Experience </h2>
+<p>talk about what I've done. Maybe consider putting a screenshot of my snake game here </p>
+<h2>Contact me</h2>
+
+
+
+<script>
+var images =["cover-cropped.png","katahdin.jpg","russia-photo.jpg"];
+var count=0;
+var slide = function() {
+	$('.photo-slide').html('<img src=' + images[count%3] + '>');
+	count++;
+}
+
+$('.photo-slide').click(function() {
+	slide();
+});
+slide();
+alert("jaalksdfj");
+</script>
+
+</body>
