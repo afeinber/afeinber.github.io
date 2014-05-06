@@ -3,43 +3,211 @@
 <head>
 <title>Alex Feinberg</title>
 <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<script src="jquery-1.11.1.min"></script>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type='text/javascript' src='script.js'></script>
+<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+
+
 <style>
-li {
-	display: inline;
-	padding: 10px 20px 10px 20px;
+
+html, body 
+{	margin:0;
+	padding: 0;
+	
+	
+	overflow-x:hidden;
+
+
+}
+
+.bigImage {
+	height: 100%;
+}
+#wrapper {
+	
+	background: #F7F7F7;
+	padding: 0 10px;
+	height: 100%;
+	
+	margin: 0 auto;
+	width: 800px;
+	margin-top: -10px;
+	padding-top: 20px;
 	position: relative;
-	top: -10px;
+
+}
+
+li {
+	text-align: center;
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: -8px;
 	font-size: 20px;
+	list-style: none;
+	
+	/*margin-right: 20px;
+	margin-left: 20px;*/
+
+}
+
+
+ul {
+	
+	text-align: center;
+	font-family: 'Cabin', sans-serif;
+	color: white;
+
+	/*Helped to get the items in the navbar lined up.*/
+	margin-left:-27px;
+
+	
+}
+
+a{
+	color: #F7F7F7;
+	text-decoration: none;
+}
+a:hover{
+	color:#A19B88;
 }
 header {
-	text-align: center;
-	background:black;
-	color: white;
-	padding: 10px 0 0 0;
-	margin: -10px -10px 0 -10px;
+
+	
+	background:#030000;
+	z-index: 1;
+
+	height: 40px;
+	padding: 5px;
+	margin: -10px 0 10px 0;
+
 }
+
 h1 {
+	margin-top: 30px;
 	text-align: center;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 h2 {
-	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	font-family: 'Cabin', sans-serif;
 }
 img {
+	
 	height: 175px;
 	width:auto;
-	border-radius: 70px;
-	border: 5px solid #666;
-	border-radius: 20px;
-	display: block;
 	margin: 0 auto;
 }
 body {
-	background: #e6eaf0;
+
+
+	background: #A19B88;
+
 }
 p {
 	text-align: center;
+	font-family: 'Cabin Condensed', sans-serif;
+	/*max-width: 600px;*/
+}
+.slider{
+	/*max-width:180px;*/
+	width: 210px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 35px;
+	position:relative;
+	
+}
+
+.arrow {
+	background: #3E3F41;
+	position: absolute;
+	width:20px;
+	height:175px;
+	z-index: 1;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	
+}
+.reverser {
+	border-radius: 8px 0 0 8px;
+	left:-20px;
+	top:0;
+	
+}
+.advancer {
+	border-radius: 0 8px 8px 0;
+	left: 220px;
+	top: 0;
+}
+.back {
+	text-align: left;
+	/*padding: 90px 35px 90px 8px;*/
+	position:relative;
+	top:60px;
+	left: 6px;
+	font-family: cursive;
+	color: #F7F7F7;
+}
+
+.forward {
+	text-align: right;
+	position: relative;
+	top: 60px;
+	right: 6px;
+	font-family: cursive;
+	color: #F7F7F7;
+
+}
+.caption {
+	position: absolute;
+	top: 20px;
+	left: 280px;
+	width: 100px;
+}
+
+article {
+	max-width: 700px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+#snake {
+	display: block;
+	height: 300px;
+	width: auto;
+	margin: 0 auto;
+	top: 400px;
+	left: 225px;
+}
+.snake-caption-big {
+	position: absolute;
+	display: block;
+	margin: 0 auto;
+	top: 900px;
+	left: 270px;
+
+}
+#snake-block {
+	position: relative;
+	margin: 0 auto;
+}
+#email {
+	color: black;
+}
+#email:hover {
+	color:#A19B88;
+}
+#about {
+	padding-top: 20px;
 }
 </style>
 
@@ -48,38 +216,105 @@ p {
 
 
 <body>
+
 <header>
+	
 <ul>
-<li>About Me</li>
-<li>Experience</li>
-<li>Contact</li>
+<li><a href="#">About Me</a></li>
+<li><a href="#">Experience</a></li>
+<li><a href="#contact-info">Contact</a></li>
 </ul>
 
 </header>
+<div id="wrapper">
 <h1>Alex Feinberg's Page</h1>
-<!--img src="cover-cropped.png"-->
+<div class="slider">
 <div class="photo-slide"></div>
+<div class="reverser arrow"><p class ="back"> < </p></div>
+<div class="advancer arrow"> <p class="forward"> > </p></div>
+
+<p class="caption"></p>
+</div>
+<article>
 <h2>About Me</h2>
-<p>Blah write something here that will be mildly long and look sorta interesting.</p>
+<p>I am a senior at Bowdoin College in Maine studying Mathematics and Russian with a minor in Computer Science. I hope to become a web/software developer in the near future. This is the first website I have ever made and I hope you enjoy it!</p>
+</article>
+<article>
 <h2> Experience </h2>
-<p>talk about what I've done. Maybe consider putting a screenshot of my snake game here </p>
-<h2>Contact me</h2>
+<p>I have been learning computer science for just over a year. I know how to code in Java, C++, Objective-C, R, MATLAB, Assembly Language on the ARM processor and PDP-8, and now HTML, CSS, and JavaScript, as you can see by how awesome my website is. Some of my projects include using nature inspired algorithms to solve the travelling salseman problem and writing and designing an iPad snake game in Objective-C.</p>
+</article>
+<div id="snake-box">
+<img id="snake" src="Snake-photo.png">
+<p id="snake-caption"><strong>The snake program I made for the iPad.</strong></p>
+</div>
+<h2 id="about"><a name ="contact-info"></a>Contact Me</h2>
+<p><strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a></p>
 
 
-
+</div>
 <script>
+
+$('.advancer').mouseenter(function() {
+	$('.forward').css("color","#A19B88");
+});
+$('.advancer').mouseleave(function() {
+	$('.forward').css("color","#F7F7F7");
+});
+$('.reverser').mouseenter(function() {
+	$('.back').css("color","#A19B88");
+});
+$('.reverser').mouseleave(function() {
+	$('.back').css("color","#F7F7F7");
+});
+
+var snakeCount=1;
+$('#snake').click(function(){
+	if(snakeCount%2) {
+		$('#snake').css("height","500px");
+		$('#snake').css("position","absolute");
+		$('html, body').addClass("bigImage");
+		$('#snake-caption').addClass("snake-caption-big");
+
+
+
+	} else {
+		$('#snake').css("height","300px");
+		$('#snake').css("position","static");
+		$('html, body').removeClass("bigImage");
+		$('#snake-caption').removeClass("snake-caption-big");
+	} 
+	snakeCount++;
+});
+
 var images =["cover-cropped.png","katahdin.jpg","russia-photo.jpg"];
-var count=0;
-var slide = function() {
-	$('.photo-slide').html('<img src=' + images[count%3] + '>');
-	count++;
+var captions=[
+"This is me holding the Taj Mahal by 2 fingers.",
+"This is me with my classmates on the top of Mt. Katahdin.",
+"This is me in full Russian garb, outside of Moscow."
+];
+var count=-1;
+var slideForward = function() {
+	$('.photo-slide').html('<img src=' + images[Math.abs(++count%3)] + '>');
 }
 
-$('.photo-slide').click(function() {
-	slide();
+var slideBack = function() {
+	$('.photo-slide').html('<img src=' + images[Math.abs(--count%3)] + '>');
+}
+$('.advancer').click(function() {
+	slideForward();
 });
-slide();
-alert("jaalksdfj");
+$('.reverser').click(function() {
+	slideBack();
+})
+$('.photo-slide').mouseenter(function() {
+	$('.caption').html(captions[Math.abs(count%3)]);
+});
+$('.photo-slide').mouseleave(function() {
+	$('.caption').empty();
+});
+slideForward();
+
+
 </script>
 
 </body>
