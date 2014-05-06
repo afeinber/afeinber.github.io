@@ -248,7 +248,7 @@ article {
 <p id="snake-caption"><strong>The snake program I made for the iPad.</strong></p>
 </div>
 <h2 id="about"><a name ="contact-info"></a>Contact Me</h2>
-<p><strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a></p>
+<p id="contact-stuff"><strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a></p>
 
 
 </div>
@@ -274,6 +274,7 @@ $('#snake').click(function(){
 		$('#snake').css("position","absolute");
 		$('html, body').addClass("bigImage");
 		$('#snake-caption').addClass("snake-caption-big");
+		$('#contact-stuff').empty();
 
 
 
@@ -282,6 +283,7 @@ $('#snake').click(function(){
 		$('#snake').css("position","static");
 		$('html, body').removeClass("bigImage");
 		$('#snake-caption').removeClass("snake-caption-big");
+		$('#contact-stuff').html('<strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a>');
 	} 
 	snakeCount++;
 });
