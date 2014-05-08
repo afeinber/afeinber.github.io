@@ -3,9 +3,10 @@
 <head>
 <title>Alex Feinberg</title>
 <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script-->
-<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-<script type='text/javascript' src='script.js'></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+<script type='//text/javascript' src='script.js'></script>
 <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
 
@@ -15,24 +16,17 @@
 html, body 
 {	margin:0;
 	padding: 0;
-	
-	
 	overflow-x:hidden;
-
-
 }
 
-.bigImage {
-	height: 100%;
-}
+
 #wrapper {
 	
 	background: #F7F7F7;
 	padding: 0 10px;
 	height: 120%;
-	
 	margin: 0 auto;
-	width: 800px;
+	max-width: 800px;
 	margin-top: -10px;
 	padding-bottom: 100px;
 	padding-top: 20px;
@@ -48,10 +42,6 @@ li {
 	margin-top: -8px;
 	font-size: 20px;
 	list-style: none;
-	
-	/*margin-right: 20px;
-	margin-left: 20px;*/
-
 }
 
 
@@ -64,6 +54,7 @@ ul {
 	/*Helped to get the items in the navbar lined up.*/
 	margin-left:-27px;
 
+
 	
 }
 
@@ -75,12 +66,10 @@ a:hover{
 	color:#A19B88;
 }
 header {
-
 	
 	background:#030000;
 	z-index: 1;
-
-	height: 40px;
+	max-height: 40px;
 	padding: 5px;
 	margin: -10px 0 10px 0;
 
@@ -100,25 +89,25 @@ img {
 	height: 175px;
 	width:auto;
 	margin: 0 auto;
+
 }
 body {
 
-
 	background: #A19B88;
-
 }
 p {
 	text-align: center;
 	font-family: 'Cabin Condensed', sans-serif;
-	/*max-width: 600px;*/
+	
 }
 .slider{
-	/*max-width:180px;*/
+	
 	width: 210px;
 	margin-right: auto;
 	margin-left: auto;
 	margin-top: 35px;
 	position:relative;
+	padding-bottom: 20px;
 	
 }
 
@@ -150,7 +139,6 @@ p {
 }
 .back {
 	text-align: left;
-	/*padding: 90px 35px 90px 8px;*/
 	position:relative;
 	top:60px;
 	left: 6px;
@@ -168,10 +156,12 @@ p {
 
 }
 .caption {
-	position: absolute;
-	top: 20px;
-	left: 280px;
-	width: 100px;
+	position: relative;
+	/*top: 170px;*/
+	text-align: center;
+	width: auto;
+	display: block;
+	margin: 0 auto;
 }
 
 article {
@@ -187,18 +177,15 @@ article {
 	width: auto;
 	margin: 0 auto;
 	top: 0px;
-	left: 225px;
 }
 #snake:hover{
 	cursor: pointer; 
 	cursor: hand; 
 }
 .snake-caption-big {
-	position: absolute;
+
 	display: block;
 	margin: 0 auto;
-	top: 510px;
-	left: 270px;
 
 }
 #snake-box {
@@ -214,6 +201,48 @@ article {
 #about {
 	padding-top: 20px;
 }
+#willy-div{
+
+	height: 40px;
+	position: absolute;
+	right: 0;
+	top:0;
+
+}
+#willy {
+	height: 40px;
+	width: auto;
+	float: right;
+	padding-bottom: 0;
+}
+#willy-caption {
+	color: white;
+	opacity: 0;
+	display: block;
+	width: 300px;
+	margin-top: 10px;
+}
+#challenge-man {
+	position: relative;
+	height: 40px;
+	width:auto;
+	bottom: -100px;
+	left: 0px;
+	 
+}
+@media (max-width: 500px) {
+header {
+	max-height: 80px;
+	height: auto;
+}
+article {
+	max-width: 300px;
+}
+#wrapper {
+	max-width: 400px;
+}
+
+}
 </style>
 
 </head>
@@ -228,6 +257,10 @@ article {
 <li><a href="#">About Me</a></li>
 <li><a href="#">Experience</a></li>
 <li><a href="#contact-info">Contact</a></li>
+<div id="willy-div">
+<img id="willy" src="http://images.sodahead.com/polls/003872877/willy-wonka-116680671607_xlarge.png">
+<p id="willy-caption">So you think you can build a website?</p>
+</div>
 </ul>
 
 </header>
@@ -238,7 +271,7 @@ article {
 <div class="reverser arrow"><p class ="back"> < </p></div>
 <div class="advancer arrow"> <p class="forward"> > </p></div>
 
-<p class="caption"></p>
+<strong><p class="caption"></p></strong>
 </div>
 <article>
 <h2>About Me</h2>
@@ -251,15 +284,17 @@ article {
 <div id="snake-box">
 <img id="snake" src="Snake-photo.png">
 <p id="snake-caption"><strong>The snake program I made for the iPad.</strong></p>
+<h2 id="about"><a name ="contact-info"></a>Contact Me</h2>
 </div>
 
-<h2 id="about"><a name ="contact-info"></a>Contact Me</h2>
+
 <p id="contact-stuff"><strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a></p>
 
-
+<img id="challenge-man" src="challenge.jpg">
 </div>
-<script>
 
+<script>
+//Changes the color of the slider arrows on hover
 $('.advancer').mouseenter(function() {
 	$('.forward').css("color","#A19B88");
 });
@@ -273,53 +308,77 @@ $('.reverser').mouseleave(function() {
 	$('.back').css("color","#F7F7F7");
 });
 
+//Toggles the snake image big and small when you click on it. 
 var snakeCount=1;
 $('#snake').click(function(){
 	if(snakeCount%2) {
+
 		$('#snake').css("height","500px");
-		$('#snake').css("position","absolute");
+		$('#snake').css("position","relative");
 		$('html, body').addClass("bigImage");
 		$('#snake-caption').addClass("snake-caption-big");
-		$('#contact-stuff').empty();
-
-
 
 	} else {
+
 		$('#snake').css("height","300px");
 		$('#snake').css("position","static");
 		$('html, body').removeClass("bigImage");
 		$('#snake-caption').removeClass("snake-caption-big");
-		$('#contact-stuff').html('<strong>Address: </strong>Bowdoin College, 226 Smith Union, Brunswick, ME 04011 <strong>Phone:</strong>(617)717-9633 <strong>Email: </strong><a id="email" href="mailto:alexandernfeinberg@gmail.com">alexandernfeinberg@gmail.com</a>');
+
 	} 
 	snakeCount++;
 });
 
+
+//images and captions for the slider
 var images =["cover-cropped.png","katahdin.jpg","russia-photo.jpg"];
 var captions=[
 "This is me holding the Taj Mahal by 2 fingers.",
 "This is me with my classmates on the top of Mt. Katahdin.",
 "This is me in full Russian garb, outside of Moscow."
 ];
+
+//Count holds the number of times that we've slid. Incremeent each time and use it mod 3.
 var count=-1;
+
 var slideForward = function() {
-	$('.photo-slide').html('<img src=' + images[Math.abs(++count%3)] + '>');
+	$('.photo-slide').html('<img src=' + images[Math.abs((++count)%3)] + '>');
 }
 
 var slideBack = function() {
-	$('.photo-slide').html('<img src=' + images[Math.abs(--count%3)] + '>');
+	$('.photo-slide').html('<img src=' + images[Math.abs((--count)%3)] + '>');
 }
+
 $('.advancer').click(function() {
 	slideForward();
 });
+
 $('.reverser').click(function() {
 	slideBack();
-})
+});
+
+//Displays the caption on hovering over the slider
 $('.photo-slide').mouseenter(function() {
 	$('.caption').html(captions[Math.abs(count%3)]);
 });
+
+//Removes the caption when youre done.
 $('.photo-slide').mouseleave(function() {
 	$('.caption').empty();
 });
+
+
+//Same thing for willy
+$('#willy').mouseenter(function() {
+	$('#willy-caption').css("opacity", "1.0");
+});
+
+$('#willy').mouseleave(function() {
+	$('#willy-caption').css("opacity", "0.0");
+});
+
+
+//Display the first image when page loads.
 slideForward();
 
 
